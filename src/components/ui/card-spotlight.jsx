@@ -1,37 +1,31 @@
 import React, { useRef, useState } from "react";
 import { cn } from "../../lib/utils";
 
-export const CardSpotlight = ({ children, className, ...props }) => {
-  const divRef = useRef(null);
+export const CardSpotlight = ({ children, className, color = "rgba(255,255,255,0.25)", ...props }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
 
   const handleMouseMove = (e) => {
-    if (!divRef.current) return;
-    const rect = divRef.current.getBoundingClientRect();
+    const rect = e.currentTarget.getBoundingClientRect();
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  const handleMouseEnter = () => setOpacity(1);
-  const handleMouseLeave = () => setOpacity(0);
-
   return (
     <div
-      ref={divRef}
       onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className={cn("relative overflow-hidden", className)}
+      className={cn("group relative overflow-hidden rounded-xl bg-black/[0.96]", className)}
       {...props}
     >
+      {/* Spotlight layer */}
       <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 z-[1]"
+        className="pointer-events-none absolute -inset-px z-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
-          opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(120,119,198,.15), transparent 40%)`,
+          background: `radial-gradient(800px circle at ${position.x}px ${position.y}px, ${color}, transparent 40%)`,
         }}
       />
-      {children}
+      {/* Content layer */}
+      <div className="relative z-10 h-full w-full">
+        {children}
+      </div>
     </div>
   );
 };
