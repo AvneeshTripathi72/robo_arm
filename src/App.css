@@ -1,0 +1,198 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #000000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.abb-logo {
+  color: #000000;
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: -1px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: #000000;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+}
+
+.nav-links li:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.explore-text {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.menu-icon {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #000000;
+}
+
+/* Hero Section */
+.hero-section {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin-top: 40px;
+}
+
+.hero-headline {
+  color: #000000;
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 30px 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.hero-description {
+  color: #000000;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 900px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  border: 2px solid #000000;
+}
+
+.btn-primary {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-secondary:hover {
+  background-color: #eeeeee;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.indicator {
+  width: 6px;
+  height: 6px;
+  background-color: #cccccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicator.active {
+  width: 40px;
+  height: 4px;
+  background-color: #000000;
+  border-radius: 0;
+}
+
+/* Floating Action Button */
+.floating-chat-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 0;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
