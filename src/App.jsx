@@ -34,12 +34,12 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
-        <About />
+        {/* <About />
         <Solutions />
         <Industries />
-        <Infrastructure />
+        <Infrastructure /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
